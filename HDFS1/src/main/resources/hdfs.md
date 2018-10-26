@@ -63,12 +63,11 @@ source /etc/profile使配置生效
 **下载hadoop**[传送门](https://hadoop.apache.org/releases.html)
 
 **修改配置文件**
-|核心配置参数                           |
-|:-:|
-| 指定hadoop的默认文件系统为：hdf            |
-| 指定hdfs的namenode节点为哪台机器           |
-| 指定namenode软件存储元数据的本地目录  |
-| 指定datanode软件存放文件块的本地目录 |
+核心配置参数                          
+-  指定hadoop的默认文件系统为：hdf            
+- 指定hdfs的namenode节点为哪台机器           
+- 指定namenode软件存储元数据的本地目录  
+- 指定datanode软件存放文件块的本地目录 
 
 
 hadoop的配置文件在：/root/apps/hadoop安装目录/etc/hadoop/
