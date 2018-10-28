@@ -1,0 +1,3 @@
+org\xrw\wordcount\WordCountMapper.class
+org\xrw\wordcount\WordCountReduce.class
+org\xrw\wordcount\JobSubmitter.class

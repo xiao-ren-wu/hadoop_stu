@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.xrw.AppTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.223 s <<< FAILURE! - in org.xrw.AppTest
+test(org.xrw.AppTest)  Time elapsed: 2.152 s  <<< ERROR!
+java.io.IOException: Target /word is a directory
+	at org.xrw.AppTest.test(AppTest.java:47)
+
