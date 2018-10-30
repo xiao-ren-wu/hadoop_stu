@@ -1,4 +1,4 @@
-package org.xrw.wordcount;
+package org.xrw.wordcount.submit;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -8,6 +8,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.xrw.wordcount.WordCountMapper;
+import org.xrw.wordcount.WordCountReduce;
 
 import java.io.IOException;
 import java.net.URI;
@@ -20,11 +22,13 @@ import java.net.URISyntaxException;
  * github https://github.com/xiao-ren-wu
  * @version 1
  * @since 2018/10/28 11:58
+ *
+ * 在windows上提交任务到yarn
  */
 
 
-public class JobSubmitter {
-    public static void main(String[] args) throws Exception {
+public class JobSubmitWindowsToYarn {
+    public static void m1ain(String[] args) throws Exception {
 
         // 在代码中设置JVM系统参数，用于给job对象来获取访问HDFS的用户身份
         System.setProperty("HADOOP_USER_NAME", "root");
