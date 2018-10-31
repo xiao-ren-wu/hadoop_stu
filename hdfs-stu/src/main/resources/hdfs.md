@@ -140,7 +140,11 @@ hadoop-daemon.sh start datanode
 6) 用自动批量启动脚本来启动HDFS
 
 1) 先配置hdp-01到集群中所有机器（包含自己）的免密登陆
-2) 配完免密后，可以执行一次  ssh 0.0.0.0
+2) 配完免密后，可以执行一次  
+~~~
+ssh-keygen
+ssh-copy-id hdp00//自己也要配置免密登录
+~~~
 3) 修改hadoop安装目录中/etc/hadoop/slaves（把需要启动datanode进程的节点列入）
 ~~~
 hdp-01
