@@ -96,6 +96,10 @@ export JAVA_HOME=/root/apps/jdk1.8.0_60
         <name>dfs.datanode.data.dir</name>
         <value>/root/dfs/data</value>
     </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>hdp01:50090</value>
+    </property>
 
 </configuration>
 ~~~
