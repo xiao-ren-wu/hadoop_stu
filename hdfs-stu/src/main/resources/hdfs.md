@@ -37,10 +37,10 @@ linux下修改host文件位置
 vim /etc/hosts
 ~~~
 修改各台机器的主机名和ip地址
-主机名：hdp-01  对应的ip地址：192.168.33.61
-主机名：hdp-02  对应的ip地址：192.168.33.62
-主机名：hdp-03  对应的ip地址：192.168.33.63
-主机名：hdp-04  对应的ip地址：192.168.33.64
+- 主机名：hdp-01  对应的ip地址：192.168.33.61
+- 主机名：hdp-02  对应的ip地址：192.168.33.62
+- 主机名：hdp-03  对应的ip地址：192.168.33.63
+- 主机名：hdp-04  对应的ip地址：192.168.33.64
 
 **关闭防火墙：**
 
@@ -96,6 +96,10 @@ export JAVA_HOME=/root/apps/jdk1.8.0_60
         <name>dfs.datanode.data.dir</name>
         <value>/root/dfs/data</value>
     </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>hdp01:50090</value>
+    </property>
 
 </configuration>
 ~~~
@@ -140,7 +144,11 @@ hadoop-daemon.sh start datanode
 6) 用自动批量启动脚本来启动HDFS
 
 1) 先配置hdp-01到集群中所有机器（包含自己）的免密登陆
-2) 配完免密后，可以执行一次  ssh 0.0.0.0
+2) 配完免密后，可以执行一次  
+~~~
+ssh-keygen
+ssh-copy-id hdp00//自己也要配置免密登录
+~~~
 3) 修改hadoop安装目录中/etc/hadoop/slaves（把需要启动datanode进程的节点列入）
 ~~~
 hdp-01
