@@ -2,7 +2,8 @@ package org.xrw.ordertopn;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -23,22 +24,36 @@ import java.io.IOException;
 
 
 public class OrderTopn {
-    public static class OrderTopnMapper extends Mapper{
+    public static class OrderTopnMapper extends Mapper<LongWritable, Text, OrderBean, NullWritable> {
+        OrderBean orderBean = new OrderBean();
+        NullWritable v = NullWritable.get();
+
         @Override
-        protected void map(Object key, Object value, Context context) throws IOException, InterruptedException {
-            super.map(key, value, context);
+        protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+            String[] fields = value.toString().split(",");
+
+            orderBean.set(fields[0], fields[1], fields[2], Float.parseFloat(fields[3]), Integer.parseInt(fields[4]));
+
+            context.write(orderBean, v);
         }
     }
-    public static class OrderTopnReducer extends Reducer{
+
+    public static class OrderTopnReducer extends Reducer<OrderBean, NullWritable, OrderBean, NullWritable> {
         @Override
-        protected void reduce(Object key, Iterable values, Context context) throws IOException, InterruptedException {
-            super.reduce(key, values, context);
+        protected void reduce(OrderBean key, Iterable<NullWritable> values, Context context) throws IOException, InterruptedException {
+            int i = 0;
+            for (NullWritable v : values) {
+                context.write(key, v);
+                if (++i == 3) {
+                    return;
+                }
+            }
         }
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration();
-        conf.setInt("topn",5);
+        conf.setInt("topn", 5);
         Job job = Job.getInstance(conf);
 
         job.setJarByClass(OrderTopn.class);
@@ -46,16 +61,20 @@ public class OrderTopn {
         job.setMapperClass(OrderTopnMapper.class);
         job.setReducerClass(OrderTopnReducer.class);
 
-        job.setMapOutputValueClass(IntWritable.class);
+        job.setMapOutputValueClass(NullWritable.class);
         job.setMapOutputKeyClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(NullWritable.class);
 
-        job.setNumReduceTasks(3);
+        job.setGroupingComparatorClass(OrderIdGroupingComparator.class);
 
-        FileInputFormat.setInputPaths(job,new Path("/topn/input"));
-        FileOutputFormat.setOutputPath(job,new Path("/topn/output"));
+        job.setNumReduceTasks(2);
+
+        job.setPartitionerClass(OrderIdPartitioner.class);
+
+        FileInputFormat.setInputPaths(job, new Path("/topn/input"));
+        FileOutputFormat.setOutputPath(job, new Path("/topn/output"));
 
         boolean b = job.waitForCompletion(true);
 
