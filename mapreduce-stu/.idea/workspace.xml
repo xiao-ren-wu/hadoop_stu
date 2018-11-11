@@ -30,7 +30,7 @@
       <file leaf-file-name="OrderTopn.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderTopn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
+            <state relative-caret-position="1540">
               <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="OrderBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="286">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -54,7 +54,7 @@
       <file leaf-file-name="CommonFriendsOne.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/friends/CommonFriendsOne.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
+            <state relative-caret-position="704">
               <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/join/ReduceSideJoin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="642">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,7 +78,7 @@
       <file leaf-file-name="OrderIdGroupingComparator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderIdGroupingComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="330">
               <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,7 +92,7 @@
       <file leaf-file-name="OrderIdPartitioner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderIdPartitioner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="286">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -202,9 +202,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="942" />
-    <option name="y" value="72" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="939" />
+    <option name="y" value="26" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -213,8 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,7 +305,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,6 +468,7 @@
       <workItem from="1541162597786" duration="1988000" />
       <workItem from="1541212100379" duration="6050000" />
       <workItem from="1541236382217" duration="3380000" />
+      <workItem from="1541307785871" duration="95000" />
     </task>
     <servers />
   </component>
@@ -504,10 +505,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48790000" />
+    <option name="totallyTimeSpent" value="48885000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="942" y="72" width="974" height="1047" extended-state="1" />
+    <frame x="939" y="26" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -518,19 +519,19 @@
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.14818764" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.3452381" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.3452381" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.41247264" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.42231947" />
       <window_info anchor="right" id="Database" order="3" weight="0.32889125" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.3365801" />
@@ -838,7 +839,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderIdPartitioner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="286">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -855,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderTopn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
+        <state relative-caret-position="1540">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -865,7 +866,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderIdGroupingComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="330">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -877,7 +878,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/ordertopn/OrderBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="286">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -887,7 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/friends/CommonFriendsOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
+        <state relative-caret-position="704">
           <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -899,16 +900,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
           <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/xrw/join/ReduceSideJoin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="642">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
