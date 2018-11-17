@@ -267,11 +267,11 @@ public class HdfsClientDemo {
 
 #### 案例1
 在业务服务器上，业务服务器会不断的产生日志（网站的页面访问日志）业务日志是用log4j生成，会不断的切出日志文件，需要定期的从业务服务器上的日志目录中，探测出需要采集的日志文件，发往HDFS，
-#####【注意】
+##### 【注意】
 - 业务服务器可能有多台（hdfs上的文件名称不能直接用业务服务器上的文件名称）
 - 当天采集的日志要放到hdfs当天的目录中。采集日志文件需要移动到日志服务器的一个备份目录中
 - 定期检查（一个小时一次）备份目录，将备份超过24小时的日志文件清除
-#####【设计方案】
+##### 【设计方案】
 1. 启动一个定时任务
     1. 启动一个定时任务：
         1. 定时探测日志源目录
@@ -289,7 +289,7 @@ public class HdfsClientDemo {
         5. HDFS中文件的前缀：access_log_
         6. HDFS中文件的后缀：.log
         
-[传送门]()
+[传送门](https://github.com/xiao-ren-wu/hadoop_stu/tree/master/hdfs-stu/src/main/java/org/xrw/hdfs/datacollection)
 #### hdfs的核心工作原理
 
 1. 什么是元数据？
@@ -303,6 +303,7 @@ namenode的实时的完整的元数据存储在内存中；
 namenode还会在磁盘中（dfs.namenode.name.dir）存储内存元数据在某个时间点上的镜像文件；
 namenode会把引起元数据变化的客户端操作记录在edits日志文件中；
 
+### checkpoint
 
 secondarynamenode会定期从namenode上下载fsimage镜像和新生成的edits日志，然后加载fsimage镜像到内存中，然后顺序解析edits文件，对内存中的元数据对象进行修改（整合）
 整合完成后，将内存元数据序列化成一个新的fsimage，并将这个fsimage镜像文件上传给namenode
@@ -310,38 +311,17 @@ secondarynamenode会定期从namenode上下载fsimage镜像和新生成的edits�
 上述过程叫做：checkpoint操作
 提示：secondary namenode每次做checkpoint操作时，都需要从namenode上下载上次的fsimage镜像文件吗？
 第一次checkpoint需要下载，以后就不用下载了，因为自己的机器上就已经有了。
-
+![](https://github.com/xiao-ren-wu/hadoop_stu/blob/master/hdfs-stu/src/main/resources/pic/namenode%E5%85%83%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E7%A4%BA%E6%84%8F%E5%9B%BE--checkpoint.png)
+**指定secondary namenode的启动位置**
+~~~
+<property>
+  <name>dfs.namenode.secondary.http-address</name>
+  <value>hdp00:50090</value>
+</property>
+~~~
 #### 客户端写数据到HDFS的流程
-![客户端写数据到HDFS的流程]()
+![客户端写数据到HDFS的流程](https://github.com/xiao-ren-wu/hadoop_stu/blob/master/hdfs-stu/src/main/resources/pic/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%86%99%E6%95%B0%E6%8D%AE%E5%88%B0HDFS%E7%9A%84%E6%B5%81%E7%A8%8B.png)
 
 #### 客户端从HDFS中读数据的流程
-![客户端从HDFS中读数据的流程]()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![客户端从HDFS中读数据的流程](https://github.com/xiao-ren-wu/hadoop_stu/blob/master/hdfs-stu/src/main/resources/pic/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%8EHDFS%E4%B8%AD%E8%AF%BB%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E7%A8%8B.png)
 
